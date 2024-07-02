@@ -28,7 +28,7 @@ data "aws_iam_policy_document" "assume_role_ec2" {
 
 # Create IAM Role for EKS Cluster
 resource "aws_iam_role" "example" {
-  name               = "eks-cluster-cloud12"
+  name               = "eks-cluster-cloud82"
   assume_role_policy = data.aws_iam_policy_document.assume_role_eks.json
 }
 
@@ -80,7 +80,7 @@ locals {
 
 # Provision EKS Cluster
 resource "aws_eks_cluster" "example" {
-  name     = "SLYS_EKS_CLOUD"
+  name     = "BASLYUS_EKS_CLOUD"
   role_arn = aws_iam_role.example.arn
 
   vpc_config {
@@ -107,7 +107,7 @@ output "kubeconfig-certificate-authority-data" {
 
 # Create IAM Role for EKS Node Group
 resource "aws_iam_role" "node_group" {
-  name               = "eks-node-group-cloud1"
+  name               = "eks-node-group-cloud2"
   assume_role_policy = data.aws_iam_policy_document.assume_role_ec2.json
 }
 
